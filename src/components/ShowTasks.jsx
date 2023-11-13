@@ -1,7 +1,14 @@
 import React from 'react'
 import "./ShowTasks.css"
 
-export const ShowTasks = ({tasksList, setTasksList}) => {
+export const ShowTasks = ({tasksList, setTasksList, task, setTask}) => {
+
+  const handleDelete = (id)=>{
+    // console.log(id);
+    // filter out the task and set new state value for tasksList
+    const newTaskList = tasksList.filter((task)=> task.id !== id);
+    setTasksList(newTaskList);
+  }
     return (
     <section className='showTask'>
         <div className='head'>
@@ -19,7 +26,7 @@ export const ShowTasks = ({tasksList, setTasksList}) => {
                 <span className='time'>{task.time}</span>
               </p>
               <i className='bi bi-pencil-square'></i>
-              <i className='bi bi-trash'></i>
+              <i className='bi bi-trash' onClick={()=>handleDelete(task.id)}></i>
             </li>
           ))}
         </ul>
