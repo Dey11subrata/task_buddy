@@ -19,15 +19,19 @@ export const ShowTasks = ({tasksList, setTasksList, task, setTask}) => {
     console.log(editTask)
     setTask(editTask)
   }
+  if(tasksList.length){
+
+  
     return (
+      
     <section className='showTask'>
-        <div className='head'>
+      <div className='head'>
             <div>
                 <span className='title'>Todo</span>
                 <span className='count'>{tasksList.length}</span>
             </div>
             <button className='clearAll' onClick={()=>setTasksList([])}>Clear All</button>
-        </div>
+      </div>
         <ul>
           {tasksList.map(task => (
               <li key={task.id}>
@@ -42,4 +46,5 @@ export const ShowTasks = ({tasksList, setTasksList, task, setTask}) => {
         </ul>
     </section>
   )
+          }
 }

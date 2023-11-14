@@ -3,9 +3,12 @@ import Logo from "../assets/logo.png"
 import "./Header.css"
 
 export const Header = () => {
-  const [theme, setTheme]= useState('light')
+  const [theme, setTheme]= useState(JSON.parse(localStorage.getItem('theme')) || 'light')
+
+  
 
   useEffect(()=>{
+    localStorage.setItem("theme", JSON.stringify(theme))
     document.documentElement.removeAttribute('class')
     document.documentElement.classList.add(theme)
   },[theme])
@@ -23,6 +26,7 @@ export const Header = () => {
             <span onClick={()=>setTheme('gradientOne')} className={theme === 'gradientOne'?'gradientOne activeTheme':'gradientOne'}></span>
             <span onClick={()=>setTheme('gradientTwo')} className={theme === 'gradientTwo'?'gradientTwo activeTheme':'gradientTwo'}></span>
             <span onClick={()=>setTheme('gradientThree')} className={theme === 'gradientThree'?'gradientThree activeTheme':'gradientThree'}></span>
+            <span onClick={()=>setTheme('patternOne')} className={theme === 'patternOne'?'patternOne activeTheme':'patternOne'}></span>
         </div>
     </header>
   )

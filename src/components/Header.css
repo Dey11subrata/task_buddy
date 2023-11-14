@@ -4,7 +4,7 @@ header{
     align-items: center;
     justify-content: space-between;
     padding: 15px;
-    margin-bottom: 70px;
+    margin: 0 10rem 3rem 10rem;
     background-color: #FFFFFF;
     border-radius: 5px;
     box-shadow: var(--box-shadow);
@@ -35,7 +35,7 @@ header{
   }
   
   .medium{
-    background-color: #EFEFEF;
+    background-color: gray;
     transition: all 500ms;
   }
   
@@ -55,6 +55,12 @@ header{
   .gradientThree{
     background: linear-gradient(125deg, #FFFFFF 0%, #000000 100%), linear-gradient(200deg, #FFD9E8 0%, #FFD9E8 50%, #DE95BA calc(50% + 1px), #DE95BA 60%, #7F4A88 calc(60% + 1px), #7F4A88 75%, #4A266A calc(75% + 1px), #4A266A 100%), linear-gradient(113deg, #FFD9E8 0%, #FFD9E8 40%, #DE95BA calc(40% + 1px), #DE95BA 50%, #7F4A88 calc(50% + 1px), #7F4A88 70%, #4A266A calc(70% + 1px), #4A266A 100%);
     background-blend-mode: overlay, overlay, normal;
+  }
+
+  .patternOne{
+    background-color: #15e3b6;
+    opacity: 1;
+    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #15e3b6 40px ), repeating-linear-gradient( #444cf755, #444cf7 );
   }
   
   
